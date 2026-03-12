@@ -1,0 +1,95 @@
+.compass-dial {
+  width: 280px;
+  height: 280px;
+  position: relative;
+  /* smooth rotation transition */
+  transition: transform 0.1s linear;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tick Marks */
+.compass-dial__tick {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+}
+
+.compass-dial__tick-line {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.compass-dial__tick--major .compass-dial__tick-line {
+  height: 18px;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 3px;
+  /* shift slightly left to center 3px width */
+  margin-left: -0.5px;
+}
+
+/* Cardinal Directions (N, E, S, W) */
+.compass-dial__cardinal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.compass-dial__cardinal-label {
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 25px;
+  /* keep text upright */
+  transition: transform 0.1s linear;
+}
+
+.compass-dial__cardinal--north .compass-dial__cardinal-label {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+/* Degree Labels (30, 60, etc...) */
+.compass-dial__degree-label-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.compass-dial__degree-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 32px;
+  /* keep text upright */
+  transition: transform 0.1s linear;
+}
+
+/* Home Marker */
+.compass-dial__home-marker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.compass-dial__home-icon {
+  margin-top: -15px; /* Place slightly outside the dial */
+  color: #34c759; /* iOS Green for home */
+  filter: drop-shadow(0 0 5px rgba(52, 199, 89, 0.6));
+}

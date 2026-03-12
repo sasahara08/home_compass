@@ -1,0 +1,27 @@
+.compass-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.compass-header__heading {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.compass-header__degree {
+  font-size: 84px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.compass-header__direction {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}

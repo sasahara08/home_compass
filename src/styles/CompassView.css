@@ -1,0 +1,65 @@
+.compass-view {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+  /* subtle deep dark gradient */
+  background: radial-gradient(circle at center, #1c1c1e 0%, #000000 70%);
+}
+
+.compass-view__main {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+/* Base fixed indicator at the top center of the compass container */
+.compass-view__north-indicator {
+  position: absolute;
+  top: -10px;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.compass-view__north-triangle {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 14px solid var(--text-primary);
+  /* Add subtle glow to indicator */
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+}
+
+.compass-view__center-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: var(--text-primary);
+  border-radius: 50%;
+  z-index: 5;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.compass-view__error {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 59, 48, 0.2);
+  color: #ff3b30;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 100;
+  white-space: nowrap;
+}
