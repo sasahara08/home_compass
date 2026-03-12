@@ -6,6 +6,7 @@ import './styles/App.css';
 
 function App() {
   const [isMobile, setIsMobile] = useState(true);
+  console.log("test")
 
   useEffect(() => {
     // 初回ロード時にデバイス判定
