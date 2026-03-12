@@ -3,8 +3,6 @@ import CompassView from './components/CompassView';
 import PcWarning from './components/PcWarning';
 import { isMobileDevice } from './utils/device';
 import './styles/App.css';
-import { FiSun, FiMoon } from 'react-icons/fi'; // To be installed if needed, or fallback symbols
-
 
 function App() {
   const [isMobile, setIsMobile] = useState(true);
