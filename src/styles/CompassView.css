@@ -5,10 +5,9 @@
   width: 100%;
   position: relative;
   align-items: center;
-  justify-content: space-between;
-  padding: 40px 0;
-  /* subtle deep dark gradient */
-  background: radial-gradient(circle at center, #1c1c1e 0%, #000000 70%);
+  justify-content: space-evenly;
+  padding: 60px 0;
+  background: var(--compass-gradient);
 }
 
 .compass-view__main {
@@ -62,4 +61,39 @@
   font-size: 14px;
   z-index: 100;
   white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.compass-view__help-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.theme-light .compass-view__help-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+  color: #ff3b30;
+}
+
+.icon-exclamation {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff3b30;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
 }

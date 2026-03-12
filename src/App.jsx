@@ -6,6 +6,7 @@ import './styles/App.css';
 
 function App() {
   const [isMobile, setIsMobile] = useState(true);
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     // 初回ロード時にデバイス判定
@@ -20,8 +21,20 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // テーマ変更時にbodyクラスを適用
+  useEffect(() => {
+    document.body.className = `theme-${theme}`;
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
-    <div className="app">
+    <div className={`app theme-${theme}`}>
+      <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="テーマ切り替え">
+        {theme === 'dark' ? '☀️' : '🌙'}
+      </button>
       {isMobile ? <CompassView /> : <PcWarning />}
     </div>
   );
