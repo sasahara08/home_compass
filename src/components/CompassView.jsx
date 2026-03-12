@@ -4,6 +4,7 @@ import CompassHeader from './CompassHeader';
 import HomeInfo from './HomeInfo';
 import HomeRegister from './HomeRegister';
 import PermissionPrompt from './PermissionPrompt';
+import LocationHelpModal from './LocationHelpModal';
 import useGeolocation from '../hooks/useGeolocation';
 import useDeviceOrientation from '../hooks/useDeviceOrientation';
 import useHomeLocation from '../hooks/useHomeLocation';
@@ -15,6 +16,7 @@ import '../styles/CompassView.css';
  */
 const CompassView = () => {
   const [showRegister, setShowRegister] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
   const { position, error: geoError, loading: geoLoading } = useGeolocation();
   const {
     heading,
@@ -86,6 +88,9 @@ const CompassView = () => {
       {geoError && (
         <div className="compass-view__error">
           <p>位置情報エラー: {geoError}</p>
+          <button className="compass-view__help-btn" onClick={() => setShowHelp(true)}>
+            <span className="icon-exclamation">!</span> 設定を確認
+          </button>
         </div>
       )}
 
@@ -99,6 +104,9 @@ const CompassView = () => {
           hasHome={!!homeLocation}
         />
       )}
+
+      {/* ヘルプモーダル */}
+      {showHelp && <LocationHelpModal onClose={() => setShowHelp(false)} />}
     </div>
   );
 };
